@@ -11,6 +11,13 @@
     <h2> {{ $h2 }} </h2>
     <p> {{ $p }} </p>
 
+
+
+    @foreach ($links as $link)
+        <li><a href="{{ route($link) }}">{{ $link }}</a></li>
+    @endforeach
+
+    
     <ul>
         <li><a href="{{ route('pagina1') }}">pagina1</a></li>
         <li><a href="{{ route('pagina2') }}">pagina2</a></li>
