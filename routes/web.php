@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use League\CommonMark\Node\Block\Document;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,16 @@ Route::get('/', function () {
             'pagina2',
             'pagina3',
             'pagina4'
+        ],
+        'buttons' => [
+            ['name' => 'click',
+            'color' => 'red' ],
+            ['name' => 'clack',
+            'color' => 'green' ],
+            ['name' => 'clock',
+            'color' => 'red' ],
+            ['name' => 'cluck',
+            'color' => 'orange' ],
         ]
     ];
 
@@ -49,3 +60,5 @@ Route::get('pagina3', function(){
 Route::get('pagina4', function(){
     return view('pagina4');
 })->name('pagina4');
+
+

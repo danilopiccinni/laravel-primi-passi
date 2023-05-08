@@ -12,18 +12,66 @@
     <p> {{ $p }} </p>
 
 
-    <ul>
-        @foreach ($links as $link)
-            <li><a href="{{ route($link) }}">{{ $link }}</a></li>
-        @endforeach
-    </ul>
-
-
+    <h3>link creati singolarmente </h3>
     <ul>
         <li><a href="{{ route('pagina1') }}">pagina1</a></li>
         <li><a href="{{ route('pagina2') }}">pagina2</a></li>
         <li><a href="{{ route('pagina3') }}">pagina3</a></li>
         <li><a href="{{ route('pagina4') }}">pagina4</a></li>
     </ul>
+
+    <hr>
+
+    <h3>link creati con un foreach </h3>
+    <ul>
+        @foreach ($links as $link)
+            <li><a href="{{ route($link) }}">{{ $link }}</a></li>
+        @endforeach
+    </ul>
+
+    <hr>
+
+    <h3>lista bottoni togglati (pratica a caso)</h3>
+    <ul>
+        @foreach ($buttons as $button)
+            <li ><button style="color: {{ $button['color'] }}" onclick="clicca('{{ $button['name'] }}', '{{ $button['color'] }}')" >{{$button['name']}}</button></li>
+        @endforeach
+    </ul>
+
+    <p id="messaggio"></p>
+
 </body>
 </html>
+
+<script>
+
+function clicca(mess,color) {
+    let messaggio = document.getElementById("messaggio")
+    if (messaggio.innerHTML != 'Bravo hai eseguito un ' + mess + '. ' + 'Ora se riclicchi ' + mess + ' sparirà' ) {
+        console.log(mess)
+        messaggio.innerHTML = 'Bravo hai eseguito un ' + mess +'. '  + 'Ora se riclicchi ' + mess + ' sparirà'
+        messaggio.style= 'color :' + color
+    } else if (messaggio.innerHTML == 'Bravo hai eseguito un '  +  mess + '. ' + 'Ora se riclicchi ' + mess + ' sparirà') {
+        messaggio.innerHTML = ''
+    }
+}
+
+</script>
+
+
+<style lang="scss">
+
+    body {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 30px
+    }
+
+
+</style>
