@@ -10,5 +10,12 @@
     <h1> {{ $h1 }} </h1>
     <h2> {{ $h2 }} </h2>
     <p> {{ $p }} </p>
+
+    <ul>
+        <li><a href="{{ route('pagina1') }}">pagina1</a></li>
+        <li><a href="{{ route('pagina2') }}">pagina2</a></li>
+        <li><a href="{{ route('pagina3') }}">pagina3</a></li>
+        <li><a href="{{ route('pagina4') }}">pagina4</a></li>
+    </ul>
 </body>
 </html>
