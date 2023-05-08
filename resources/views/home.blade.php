@@ -7,8 +7,8 @@
     <title>Laravel Hello World</title>
 </head>
 <body>
-    <h1>
-        Hello world!!!
-    </h1>
+    <h1> {{ $h1 }} </h1>
+    <h2> {{ $h2 }} </h2>
+    <p> {{ $p }} </p>
 </body>
 </html>
